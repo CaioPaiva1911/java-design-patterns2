@@ -1,8 +1,8 @@
 package br.com.alura.loja.pedido;
 
-import java.time.LocalDateTime;
-
 import br.com.alura.loja.orcamento.Orcamento;
+
+import java.time.LocalDateTime;
 
 public class Pedido {
 
@@ -28,4 +28,12 @@ public class Pedido {
 		return orcamento;
 	}
 
+	@Override
+	public String toString() {
+		return "Pedido{" +
+				"cliente='" + cliente + '\'' +
+				", data=" + data +
+				", orcamento=" + orcamento +
+				'}';
+	}
 }

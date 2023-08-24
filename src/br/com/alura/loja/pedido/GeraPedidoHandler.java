@@ -10,7 +10,7 @@ import java.util.List;
 
 public class GeraPedidoHandler {
 
-	private List<AcaoAposGerarPedido> acoesAposGerarPedido;
+	private final List<AcaoAposGerarPedido> acoesAposGerarPedido;
 	
 	// injecao de dependencias para servicos de infra
 	public GeraPedidoHandler(List<AcaoAposGerarPedido> acoesAposGerarPedidos) {
@@ -18,7 +18,6 @@ public class GeraPedidoHandler {
 	}
 
 	public void executar(GeraPedido geraPedido) {
-//		Orcamento orcamento = new Orcamento(geraPedido.getValorOrcamento(), geraPedido.getQuantidadeItens());
 		Orcamento orcamento = new Orcamento();
 		orcamento.adicionarItem(new ItemOrcamento(new BigDecimal("500")));
 		Pedido pedido = new Pedido(geraPedido.getCliente(), LocalDateTime.now(), orcamento);
